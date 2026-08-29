@@ -80,20 +80,22 @@ export default function UpgradeDiscountModal({
 
           {/* CTA Buttons */}
           <div className="space-y-2.5 pt-1">
-            <button
+            <a
+              href="https://pay.cakto.com.br/wyd8m7r"
               onClick={onAcceptUpgrade}
-              className="cta-glow-button w-full py-4 px-6 rounded-full font-black text-base sm:text-lg tracking-wider uppercase flex items-center justify-center gap-2 bg-[#10b981] hover:bg-[#059669] text-white shadow-xl shadow-emerald-500/30 transition-all duration-300 transform active:scale-95 cursor-pointer"
+              className="cta-glow-button w-full py-4 px-6 rounded-full font-black text-base sm:text-lg tracking-wider uppercase flex items-center justify-center gap-2 bg-[#10b981] hover:bg-[#059669] text-white shadow-xl shadow-emerald-500/30 transition-all duration-300 transform active:scale-95 cursor-pointer text-center"
             >
               <span>QUERO ESSE PLANO</span>
               <ArrowRight className="w-5 h-5 stroke-[2.5]" />
-            </button>
+            </a>
 
-            <button
+            <a
+              href="https://pay.cakto.com.br/34dgk46_1071344"
               onClick={onContinueEssential}
-              className="w-full py-2 text-xs font-semibold text-slate-400 hover:text-slate-600 transition cursor-pointer"
+              className="block w-full py-2 text-xs font-semibold text-slate-400 hover:text-slate-600 transition cursor-pointer text-center"
             >
               Não, quero ficar com o plano de R$ 9,90
-            </button>
+            </a>
           </div>
 
           {/* Reassurance */}

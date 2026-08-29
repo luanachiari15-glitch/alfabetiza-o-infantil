@@ -143,17 +143,24 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
             </div>
 
             {/* CTA Button */}
-            <button
-              onClick={() => onSelectPlan(plan)}
-              className={`w-full py-4 px-6 rounded-full font-extrabold text-base tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-95 cursor-pointer ${
-                plan.popular
-                  ? 'cta-glow-button bg-[#10b981] hover:bg-[#059669] text-white shadow-lg shadow-emerald-500/30'
-                  : 'bg-slate-200 hover:bg-slate-300 text-slate-700 hover:text-slate-900 border border-slate-300 shadow-xs'
-              }`}
-            >
-              <span>QUERO ESSE PLANO</span>
-              <ArrowRight className="w-4 h-4 stroke-[2.5]" />
-            </button>
+            {plan.popular ? (
+              <a
+                href={plan.checkoutUrl || 'https://pay.cakto.com.br/9pnaw5p_1071356'}
+                className="w-full py-4 px-6 rounded-full font-extrabold text-base tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-95 cursor-pointer cta-glow-button bg-[#10b981] hover:bg-[#059669] text-white shadow-lg shadow-emerald-500/30 text-center"
+              >
+                <span>QUERO ESSE PLANO</span>
+                <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+              </a>
+            ) : (
+              <button
+                type="button"
+                onClick={() => onSelectPlan(plan)}
+                className="w-full py-4 px-6 rounded-full font-extrabold text-base tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-95 cursor-pointer bg-slate-200 hover:bg-slate-300 text-slate-700 hover:text-slate-900 border border-slate-300 shadow-xs"
+              >
+                <span>QUERO ESSE PLANO</span>
+                <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+              </button>
+            )}
           </div>
         ))}
       </div>
