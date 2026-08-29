@@ -15,6 +15,7 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
       originalPrice: 97,
       price: 27,
       cents: ',00',
+      checkoutUrl: 'https://pay.cakto.com.br/9pnaw5p_1071356',
       features: [
         { text: '+3.700 Atividades Prontas para Imprimir' },
         { text: 'Sílabas Simples + Complexas (BRA, NHA, LHA...)' },
@@ -39,6 +40,7 @@ export default function PricingSection({ onSelectPlan }: PricingSectionProps) {
       originalPrice: 37,
       price: 9,
       cents: ',90',
+      checkoutUrl: 'https://pay.cakto.com.br/34dgk46_1071344',
       features: [
         { text: '900 atividades' },
         { text: 'Arquivos em PDF prontos para imprimir' },

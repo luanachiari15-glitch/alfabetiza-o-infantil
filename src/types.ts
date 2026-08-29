@@ -6,6 +6,7 @@ export interface Plan {
   originalPrice: number;
   price: number;
   cents: string;
+  checkoutUrl?: string;
   features: {
     text: string;
     isBonus?: boolean;

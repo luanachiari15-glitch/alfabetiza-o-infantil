@@ -85,20 +85,21 @@ export default function App() {
       setPendingEssentialPlan(plan);
       setShowUpgradeModal(true);
     } else {
-      setSelectedPlan(plan);
+      // Plano Completo 27,00
+      window.location.href = 'https://pay.cakto.com.br/9pnaw5p_1071356';
     }
   };
 
   const handleAcceptUpgrade = () => {
     setShowUpgradeModal(false);
-    setSelectedPlan(discountedPremiumPlan);
+    // Oferta Especial de Upgrade 17,00
+    window.location.href = 'https://pay.cakto.com.br/wyd8m7r';
   };
 
   const handleContinueEssential = () => {
     setShowUpgradeModal(false);
-    if (pendingEssentialPlan) {
-      setSelectedPlan(pendingEssentialPlan);
-    }
+    // Oferta Essencial 9,90
+    window.location.href = 'https://pay.cakto.com.br/34dgk46_1071344';
   };
 
   const handleScrollToPricing = () => {
@@ -106,7 +107,7 @@ export default function App() {
     if (pricingElem) {
       pricingElem.scrollIntoView({ behavior: 'smooth' });
     } else {
-      setSelectedPlan(defaultPremiumPlan);
+      window.location.href = 'https://pay.cakto.com.br/9pnaw5p_1071356';
     }
   };
 
