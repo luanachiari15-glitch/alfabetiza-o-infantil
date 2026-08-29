@@ -1,0 +1,6 @@
+{
+  "name": "Kit Alfabetização — Mais de 3.700 Atividades do Zero à Leitura",
+  "description": "Mais de 3.700 atividades para levar a criança do zero à leitura. 100% alinhado à BNCC da Educação Infantil ao Ensino Fundamental.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
